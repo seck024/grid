@@ -1,0 +1,206 @@
+*{
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    display: grid;
+    background-color: black;
+    width: 900px;
+    height: 600px;
+    grid-gap: 5px; /*l'espacement entre les lignes et les colonnes d'une grille*/
+    padding: 5px;
+    /*nommer explicitement les différentes sections de la grille*/
+    grid-template-areas:
+   "w1 w1 w2 w2 w2 w2 w2 w2 w2 w2 w2 w2 w2 w2 w3 w3 w3 w3 w3 w3 w3 w3 w3 w3 w3 w3 w4 w4 y1 y1"
+   "w1 w1 z1 z1 z1 z1 z1 z1 z1 z1 z1 z1 z1 z1 w5 w5 w5 w5 z2 z2 z2 z2 z2 z2 z2 z2 w4 w4 y1 y1"
+   "w1 w1 z1 z1 z1 z1 z1 z1 z1 z1 z1 z1 z1 z1 w5 w5 w5 w5 z2 z2 z2 z2 z2 z2 z2 z2 w4 w4 y1 y1"
+   "w1 w1 z1 z1 z1 z1 z1 z1 z1 z1 z1 z1 z1 z1 w5 w5 w5 w5 z2 z2 z2 z2 z2 z2 z2 z2 w4 w4 y1 y1"
+   ".   . w6 w6 w6 w6 .  .  w7 w7 w7 w7 w8 w8 y2 y2 y2 y2 r1 r1 r1 r1 r1 r1 r2 r2 w4 w4 y1 y1"
+   ".   . w6 w6 w6 w6 .  .  w7 w7 w7 w7 w8 w8 y2 y2 y2 y2 r1 r1 r1 r1 r1 r1 r2 r2 w4 w4 y1 y1"
+   ".   . w6 w6 w6 w6 .  .  w7 w7 w7 w7 w8 w8 y2 y2 y2 y2 r1 r1 r1 r1 r1 r1 r2 r2 w4 w4 y1 y1"
+   ".   . w6 w6 w6 w6 .  .  w7 w7 w7 w7 w8 w8 y2 y2 y2 y2 r1 r1 r1 r1 r1 r1 r2 r2 w4 w4 y1 y1"
+   ".   . w6 w6 w6 w6 .  .  w7 w7 w7 w7 w8 w8 y2 y2 y2 y2 r1 r1 r1 r1 r1 r1 r2 r2 w4 w4 y1 y1"
+   ".   . w6 w6 w6 w6 .  .  w7 w7 w7 w7 w8 w8 y2 y2 y2 y2 r1 r1 r1 r1 r1 r1 r2 r2 w4 w4 y1 y1"
+   ".   . w6 w6 w6 w6 .  .  w7 w7 w7 w7 w8 w8 y2 y2 y2 y2 r1 r1 r1 r1 r1 r1 r2 r2 w4 w4 y1 y1"
+   ".   . w6 w6 w6 w6 .  .  w7 w7 w7 w7 w8 w8 y2 y2 y2 y2 r1 r1 r1 r1 r1 r1 r2 r2 w4 w4 y1 y1"
+   ".   . w6 w6 w6 w6 .  .  y3 y3 r3 r3 r3 r3 z3 z3 z3 z3 w9 w9 w9 w9 w9 w9 d1 d1 .   .  .  ."
+   ".   . w6 w6 w6 w6 .  .  y3 y3 r3 r3 r3 r3 z3 z3 z3 z3 w9 w9 w9 w9 w9 w9 d1 d1 .   .  .  ."
+   ".   . w6 w6 w6 w6 .  .  y3 y3 r3 r3 r3 r3 z3 z3 z3 z3 w9 w9 w9 w9 w9 w9 d1 d1 .   .  .  ."
+   "d2 d2 r4 r4 r4 r4 .  .  y4 y4 d3 d3 d3 d3 d3 d3 d3 d4 d4 d4 d4 z4 z4 z4 y5 y5 d5 d5 d5 d5"
+   "d2 d2 r4 r4 r4 r4 .  .  y4 y4 d3 d3 d3 d3 d3 d3 d3 d4 d4 d4 d4 z4 z4 z4 y5 y5 d5 d5 d5 d5"
+   "d2 d2 r4 r4 r4 r4 .  .  y4 y4 d3 d3 d3 d3 d3 d3 d3 d4 d4 d4 d4 z4 z4 z4 y5 y5 d5 d5 d5 d5"
+   "d2 d2 r4 r4 r4 r4 .  .  y4 y4 d3 d3 d3 d3 d3 d3 d3 d4 d4 d4 d4 z4 z4 z4 y5 y5 d5 d5 d5 d5"
+   "d2 d2 r4 r4 r4 r4 .  .  y4 y4 d3 d3 d3 d3 d3 d3 d3 d4 d4 d4 d4 z4 z4 z4 y5 y5 d5 d5 d5 d5"
+   "d2 d2 r4 r4 r4 r4 .  .  y4 y4 r5 r5 r5 r5 .  .  .  .  .  .  .  .  d7 d7 d7 d7 d7 d7 d7 d7"
+   "d2 d2 r4 r4 r4 r4 .  .  y4 y4 r5 r5 r5 r5 .  .  .  .  .  .  .  .  d7 d7 d7 d7 d7 d7 d7 d7"
+   "d6 d6 d6 d6 d6 d6 d6 d6 y4 y4 r5 r5 r5 r5 .  .  .  .  .  .  .  .  d7 d7 d7 d7 d7 d7 d7 d7"
+   "d6 d6 d6 d6 d6 d6 d6 d6 y4 y4 r5 r5 r5 r5 .  .  .  .  .  .  .  .  d7 d7 d7 d7 d7 d7 d7 d7"
+;
+}
+/* toutes les cases jaune*/
+#y1 , #y2 , #y3 , #y4 , #y5 {
+    background-color: yellow;
+}
+/* toutes les cases rouge*/
+#r1, #r2, #r3, #r4, #r5{
+    background-color: red;
+}
+/* toutes les cases blue*/
+#z1, #z2, #z3, #z4{
+    background-color: blue;
+}
+/* toutes les cases blanche*/
+#w1 , #w2 ,#w3, #w4,#w5 , #w6 ,#w7, #w8, #w9,#d1,#d2,#d3,#d4,#d5,#d6,#d7{
+    background-color: white;
+}
+/* grid-area=nommer une zone spécifique à laquelle l'élément appartient*/
+#w1
+{
+    grid-area: w1;
+}
+
+#w2
+{
+    grid-area: w2;
+}
+
+#w3
+{
+    grid-area: w3;
+}
+
+#w4
+{
+    grid-area: w4;
+}
+
+#w5
+{
+    grid-area: w5;
+}
+
+#w6
+{
+    grid-area: w6;
+}
+
+#w7
+{
+    grid-area: w7;
+}
+
+#w8
+{
+    grid-area: w8;
+}
+
+#w9
+{
+    grid-area: w9;
+}
+
+#d1
+{
+    grid-area: d1;
+}
+
+#d2
+{
+    grid-area: d2;
+}
+
+#d3
+{
+    grid-area: d3;
+}
+
+#d4
+{
+    grid-area: d4;
+}
+
+#d5
+{
+    grid-area: d5;
+}
+
+#d6
+{
+    grid-area: d6;
+}
+
+#d7
+{
+    grid-area: d7;
+}
+#y1
+{
+    grid-area: y1;
+}
+
+#y2
+{
+    grid-area: y2;
+}
+
+#y3
+{
+    grid-area: y3;
+}
+
+#y4
+{
+    grid-area: y4;
+}
+
+#y5
+{
+    grid-area: y5;
+}
+#r1
+{
+    grid-area: r1;
+}
+
+#r2
+{
+    grid-area: r2;
+}
+
+#r3
+{
+    grid-area: r3;
+}
+
+#r4
+{
+    grid-area: r4;
+}
+
+#r5
+{
+    grid-area: r5;
+}
+#z1
+{
+    grid-area: z1;
+}
+
+#z2
+{
+    grid-area: z2;
+}
+
+#z3
+{
+    grid-area: z3;
+}
+
+#z4
+{
+    grid-area: z4;
+}
